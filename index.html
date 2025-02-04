@@ -15,53 +15,7 @@
         
         <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
         <script src="https://unpkg.com/leaflet-polyline-decorator"></script>
-
-        <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-                background-color: #f4f4f4;
-                font-family: Arial, sans-serif;
-            }
-            
-            h1 {
-                color: #333;
-            }
-
-            #map {
-                width: 80%;
-                max-width: 800px;
-                height: 500px;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                border: 1px solid #ccc;
-                margin-bottom: 10px;
-            }
-
-            #toggle-route {
-                padding: 10px 20px;
-                font-size: 16px;
-                border: none;
-                border-radius: 8px;
-                background-color: #007bff;
-                color: white;
-                cursor: pointer;
-                transition: background 0.3s;
-            }
-
-            #toggle-route:hover {
-                background-color: #0056b3;
-            }
-
-            .active {
-                background-color: #dc3545 !important;
-            }
-        </style>
-
+        <link rel="stylesheet" href="./styles/style.css">
         <title>BusON</title>
     </head>
     <body>
