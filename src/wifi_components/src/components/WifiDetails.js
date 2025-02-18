@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native'; // Importando StyleSheet
-import Estilo from './estilo';
+
 import WifiReborn from 'react-native-wifi-reborn';
 import { PermissionsAndroid } from 'react-native';
 
