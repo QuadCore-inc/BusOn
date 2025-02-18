@@ -1,0 +1,10 @@
+# ninja log v5
+4	168	0	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/.cxx/Debug/704c5p2g/arm64-v8a/CMakeFiles/cmake.verify_globs	71134967ffe748da
+14	9811	7615398423296970	CMakeFiles/appmodules.dir/ec7027d16d69a0dc76a0c44f7f23b436/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	b9ca31e1afa8a0d1
+1	10339	7615398428560681	CMakeFiles/appmodules.dir/OnLoad.cpp.o	8959c544f4993bcc
+10339	10504	7615398430298039	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/build/intermediates/cxx/Debug/704c5p2g/obj/arm64-v8a/libappmodules.so	f8a3e3514f4f246e
+169	562	7615404208551442	build.ninja	fd2629c10e280cd5
+2	42	0	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/.cxx/Debug/704c5p2g/arm64-v8a/CMakeFiles/cmake.verify_globs	71134967ffe748da
+47	5332	7615404262638442	CMakeFiles/appmodules.dir/ec7027d16d69a0dc76a0c44f7f23b436/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	b9ca31e1afa8a0d1
+36	5741	7615404266688077	CMakeFiles/appmodules.dir/OnLoad.cpp.o	8959c544f4993bcc
+5741	5943	7615404268798436	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/build/intermediates/cxx/Debug/704c5p2g/obj/arm64-v8a/libappmodules.so	f8a3e3514f4f246e
