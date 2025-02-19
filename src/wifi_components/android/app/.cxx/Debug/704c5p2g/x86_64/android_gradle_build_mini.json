@@ -1,5 +1,6 @@
 {
   "buildFiles": [
+    "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\src\\wifi_components\\node_modules\\@react-native-community\\geolocation\\android\\build\\generated\\source\\codegen\\jni\\CMakeLists.txt",
     "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\src\\wifi_components\\node_modules\\react-native\\ReactAndroid\\cmake-utils\\default-app-setup\\CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
@@ -26,6 +27,11 @@
         "C:\\Users\\kkaua\\.gradle\\caches\\8.10.2\\transforms\\ffe8bc820e361c19e57c6796da86db29\\transformed\\react-android-0.77.0-debug\\prefab\\modules\\jsi\\libs\\android.x86_64\\libjsi.so",
         "C:\\Users\\kkaua\\.gradle\\caches\\8.10.2\\transforms\\ffe8bc820e361c19e57c6796da86db29\\transformed\\react-android-0.77.0-debug\\prefab\\modules\\reactnative\\libs\\android.x86_64\\libreactnative.so"
       ]
+    },
+    "react_codegen_RNCGeolocationSpec::@1b959fcb56e23f7716ba": {
+      "artifactName": "react_codegen_RNCGeolocationSpec",
+      "abi": "x86_64",
+      "runtimeFiles": []
     }
   }
 }

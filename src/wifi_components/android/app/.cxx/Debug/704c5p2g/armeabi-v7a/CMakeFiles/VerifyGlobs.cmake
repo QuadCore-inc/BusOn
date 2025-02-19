@@ -12,6 +12,31 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/.cxx/Debug/704c5p2g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
 endif()
 
+# react_codegen_SRCS at C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/RNCGeolocationSpec-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/.cxx/Debug/704c5p2g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/*.cpp")
+set(OLD_GLOB
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/ComponentDescriptors.cpp"
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/EventEmitters.cpp"
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/Props.cpp"
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/RNCGeolocationSpecJSI-generated.cpp"
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/ShadowNodes.cpp"
+  "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/react/renderer/components/RNCGeolocationSpec/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/.cxx/Debug/704c5p2g/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
 # override_cpp_SRC at C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake:42 (file)
 # input_SRC at C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake:47 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/*.cpp")
