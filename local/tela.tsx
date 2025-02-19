@@ -16,10 +16,10 @@ class App extends Component {
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.button} onPress={this.onPress}>
-          <Text>Click me</Text>
+          <Text>Clique</Text>
         </TouchableOpacity>
         <View>
-          <Text>You clicked {this.state.count} times</Text>
+          <Text> Você clicou {this.state.count} vezes</Text>
         </View>
       </View>
     );
