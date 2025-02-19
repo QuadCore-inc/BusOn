@@ -1,0 +1,16 @@
+# ninja log v5
+62	4363	0	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/RNCGeolocationSpecJSI-generated.cpp.o	7c9752983315bf8f
+1	32	0	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/.cxx/Debug/16346s27/armeabi-v7a/CMakeFiles/cmake.verify_globs	3e2aee0981478622
+69	4116	7616895189639680	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/Props.cpp.o	e11f6a933bd5939d
+54	3738	7616895185835860	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/EventEmitters.cpp.o	7be5c30c27f7363b
+13	4637	7616895194849166	CMakeFiles/appmodules.dir/C_/Users/marco/Documents/QuadCore/src/wifi_components/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	bbd5c5cca68aa900
+36	279	7618649939904510	build.ninja	16b75e80310bb81f
+26	4947	7616895197903128	CMakeFiles/appmodules.dir/OnLoad.cpp.o	dc41aa79656a0535
+4947	5094	7616895199422908	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/build/intermediates/cxx/Debug/16346s27/obj/armeabi-v7a/libappmodules.so	b461bcb7e8338b79
+33	3333	7616895181819473	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/States.cpp.o	ac3a85fe9c0204ac
+47	4418	7616895192676750	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/ShadowNodes.cpp.o	8b9bd64c5d1be739
+19	4512	7616895193541457	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/RNCGeolocationSpec-generated.cpp.o	55be7b2a07a67e8d
+40	4588	7616895194308710	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/f3ee4c34af00dbdcf11b60ec1cbc8a99/ComponentDescriptors.cpp.o	7586668879c87c1f
+2	35	0	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/.cxx/Debug/16346s27/armeabi-v7a/CMakeFiles/cmake.verify_globs	3e2aee0981478622
+12	2763	0	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/RNCGeolocationSpecJSI-generated.cpp.o	7c9752983315bf8f
+2763	2942	7618649970766960	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/build/intermediates/cxx/Debug/16346s27/obj/armeabi-v7a/libappmodules.so	b461bcb7e8338b79

@@ -1,0 +1,5 @@
+src/wifi_components/android/.gradle/
+src/wifi_components/android/build/
+src/wifi_components/ios/
+src/wifi_components/android/app/build/
+src/wifi_components/node_nodules/

@@ -1,0 +1,14 @@
+# ninja log v5
+44	3322	7616895290299684	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/States.cpp.o	4f45620f2e9d2ed0
+1	28	0	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/.cxx/Debug/16346s27/x86_64/CMakeFiles/cmake.verify_globs	5dc764e328ec60
+11	4124	7616895298345977	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/Props.cpp.o	b95b995059eb5215
+29	3666	7616895293743794	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/EventEmitters.cpp.o	af4d0f0d5a0577ad
+51	4597	7616895303010589	CMakeFiles/appmodules.dir/C_/Users/marco/Documents/QuadCore/src/wifi_components/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	828d2dda85227d8a
+28	226	7618649986170988	build.ninja	8e0f5bc9471be789
+59	4906	7616895306112207	CMakeFiles/appmodules.dir/OnLoad.cpp.o	223aa581b3d99a4e
+4906	5052	7616895307606311	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/build/intermediates/cxx/Debug/16346s27/obj/x86_64/libappmodules.so	2d0c8c48104b9abf
+16	4259	7616895299612305	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/f3ee4c34af00dbdcf11b60ec1cbc8a99/RNCGeolocationSpecJSI-generated.cpp.o	545301f3af2ff3e5
+22	4395	7616895301021945	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/ShadowNodes.cpp.o	9a12fc6fd69573d0
+66	4509	7616895302113266	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/RNCGeolocationSpec-generated.cpp.o	c70cff4f079f1cd6
+36	4535	7616895302449174	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/ComponentDescriptors.cpp.o	f3aa7284594a7ad3
+2	33	0	C:/Users/marco/Documents/QuadCore/src/wifi_components/android/app/.cxx/Debug/16346s27/x86_64/CMakeFiles/cmake.verify_globs	5dc764e328ec60
