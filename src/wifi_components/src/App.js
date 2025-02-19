@@ -1,14 +1,32 @@
-import React from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
-import WifiDetails from './components/WifiDetails'; // Importe o componente WifiDetails
+import React, {Component} from 'react';
+import {StyleSheet, View} from 'react-native';
+import MapLibreGL from '@maplibre/maplibre-react-native';
 
-const App = () => {
-  return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-      <StatusBar barStyle="dark-content" />
-      <WifiDetails /> {/* Use o componente WifiDetails */}
-    </SafeAreaView>
-  );
-};
+import MapComponent from './components/Map'
 
-export default App;
+import { UserLocationUpdate } from './components/UserLocationUpdate';
+
+
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  map: {
+    flex: 1,
+    alignSelf: 'stretch',
+  },
+});
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.page}>
+        {/* <MapComponent /> */}
+        <UserLocationUpdate />
+      </View>
+    );
+  }
+}

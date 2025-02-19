@@ -1,60 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native'; // Importando StyleSheet
-
+import { View, Text, StyleSheet, PermissionsAndroid } from 'react-native';
 import WifiReborn from 'react-native-wifi-reborn';
-import { PermissionsAndroid } from 'react-native';
 
 const WifiDetails = () => {
-    const [wifilist, setWifiList] = useState([]);
-    console.log(wifilist + 'list')
+    const [wifiList, setWifiList] = useState([]);
     const [currentSSID, setCurrentSSID] = useState('');
 
     useEffect(() => {
-        permission();
-        WifiReborn.getCurrentWifiSSID().then(
-            ssid => {
-                console.log("Your current connected wifi SSID is " + ssid);
-                setCurrentSSID(ssid);
-            },
-            () => {
-                console.log("Cannot get current SSID!");
-            }
-        );
-        WifiReborn.loadWifiList().then(List => {
-            setWifiList(List);
-        });
-    }, []);
+        const fetchWifiDetails = async () => {
+            const granted = await PermissionsAndroid.request(
+                PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                {
+                    title: 'Permissão de Localização Necessária',
+                    message:
+                        'Precisamos da permissão de localização para buscar redes WiFi disponíveis.',
+                    buttonNegative: 'Negar',
+                    buttonPositive: 'Permitir',
+                }
+            );
 
-    const permission = async () => {
-        const granted = await PermissionsAndroid.request(
-            PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-            {
-                title: 'Location permission is required for WiFi connections',
-                message:
-                    'This app needs location permission as this is required ' +
-                    'to scan for wifi networks.',
-                buttonNegative: 'DENY',
-                buttonPositive: 'ALLOW',
-            },
-        );
-        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-            console.log("granted");
-        } else {
-            console.log("not granted");
-        }
-    };
+            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                console.log("Permissão concedida!");
+
+                try {
+                    const ssid = await WifiReborn.getCurrentWifiSSID();
+                    console.log("SSID atual:", ssid);
+                    setCurrentSSID(ssid);
+                } catch (error) {
+                    console.log("Erro ao obter SSID:", error);
+                    setCurrentSSID('Erro ao obter SSID');
+                }
+
+                try {
+                    const list = await WifiReborn.loadWifiList();
+                    console.log("Lista de redes WiFi:", list);
+                    setWifiList(list);
+                } catch (error) {
+                    console.log("Erro ao carregar lista de redes WiFi:", error);
+                    setWifiList([]);
+                }
+            } else {
+                console.log("Permissão negada!");
+            }
+        };
+
+        fetchWifiDetails();
+    }, []);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>
-                Redes hackeadas
-            </Text>
-            <Text style={styles.ssidText}>
-                Rede de bosta: {currentSSID}
-            </Text>
-            {wifilist.map(List => {
-                return <Text style={{color:'black'}}>Redes dos merdas:{List.SSID}</Text>
-            })}
+            <Text style={styles.header}>Redes Disponíveis</Text>
+            <Text style={styles.ssidText}>SSID Atual: {currentSSID}</Text>
+
+            {wifiList.length > 0 ? (
+                wifiList.map((wifi, index) => (
+                    <Text key={index} style={styles.wifiItem}>
+                        {wifi.SSID}
+                    </Text>
+                ))
+            ) : (
+                <Text style={styles.noWifiText}>Nenhuma rede encontrada</Text>
+            )}
         </View>
     );
 };
@@ -62,19 +68,27 @@ const WifiDetails = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white', // Definindo cor de fundo branca
-        justifyContent: 'center', // Centralizando os itens verticalmente
+        backgroundColor: 'white',
+        justifyContent: 'center',
         padding: 20,
     },
     header: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: 'black', // Definindo a cor do texto para preto
+        color: 'black',
     },
     ssidText: {
         marginTop: 20,
-        color: 'red', // Cor do texto em vermelho
-    }
+        color: 'blue',
+    },
+    wifiItem: {
+        color: 'black',
+        marginTop: 5,
+    },
+    noWifiText: {
+        color: 'gray',
+        marginTop: 10,
+    },
 });
 
 export default WifiDetails;
