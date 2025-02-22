@@ -6,7 +6,7 @@ import SubscriptionForm from 'components/subscription-form';
 
 const Subscribe = () => {
   return (
-    <Box as="section" id="subscribe" sx={styles.section}>
+    <section id="subscribe" sx={styles.section}>
       <Container>
         <SectionHeading
           sx={styles.heading}
@@ -15,7 +15,7 @@ const Subscribe = () => {
         />
         <SubscriptionForm sx={styles.subscriptionForm} />
       </Container>
-    </Box>
+      </section>
   );
 };
 

@@ -18,7 +18,7 @@ export default function Footer() {
       <Container>
         <Flex sx={styles.footerInner}>
           <Flex sx={styles.copyright}>
-            <Image src={logoLasse} alt="Logo" width={150} height={100} />
+            <Image src={logoLasse} alt="Logo" width={100} height={66} />
             <Text as="span">
               &copy; Copyright by {new Date().getFullYear()} QuadCore, Inc
             </Text>

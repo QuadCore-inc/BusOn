@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx, Container, Grid, Box, Flex, Heading, Text } from 'theme-ui';
 import Image from 'components/image';
-import ideaImage from '../assets/images/idea.jpeg';
+import ideaImage from '../assets/images/idea.png';
+import EngImage from '../assets/images/eng.png';
 import diagramaImage from '../assets/images/diagrama.png';
 import rightArrow from '../assets/images/icons/right-arrow.png';
 
@@ -32,21 +33,24 @@ const styles = {
       backgroundColor: 'white',
       boxShadow: '0px 15px 60px rgba(63, 90, 130, 0.12)',
     },
+    display: 'flex',
+    flexWrap: 'wrap',
   },
   card: {
-    p: ['50px 50px 50px', null, null, null],
-    minHeight: '450px',
+    p: ['20px', '30px', '40px', '50px'],
+    minHeight: 'auto',
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
+    textAlign: 'center',
   },
   media: {
     alignItems: 'center',
-    mr: [6],
+    mr: [0, null, null, 6],
     mb: [5, null, null, null, null, 0],
     minWidth: [120],
     img: {
-      maxWidth: ['350px', null, null, null, null, '400px'],
+      maxWidth: ['100%', '80%', '70%', '60%', '50%'],
     },
   },
   content: {
@@ -65,6 +69,7 @@ const styles = {
       lineHeight: [2.3],
       color: 'headingSecondary',
       mt: [4],
+      textAlign: 'justify', // Adiciona alinhamento justificado
     },
   },
   highlightImage: {
@@ -78,14 +83,14 @@ const data = [
   {
     id: 1,
     icon: ideaImage,
-    title: 'Nossa Ideia',
-    description: `Nosso aplicativo visa facilitar o compartilhamento de informações entre usuários de ônibus, proporcionando uma plataforma onde os passageiros podem trocar experiências, dicas e atualizações em tempo real.`,
+    title: 'Nossa Idéia',
+    description: `Nosso aplicativo visa facilitar o compartilhamento de informações entre usuários de ônibus para otimizar a tomada de decisão do usuário, proporcionando uma plataforma onde os passageiros podem trocar experiências, dicas e atualizações em tempo real de maneira gratuita.`,
   },
   {
     id: 2,
-    icon: ideaImage,
+    icon: EngImage,
     title: 'Como Funciona',
-    description: `Através do nosso aplicativo, os usuários podem postar atualizações sobre suas viagens, reportar problemas e compartilhar informações úteis com outros passageiros, criando uma comunidade colaborativa e informada.`,
+    description: `Nosso aplicativo usa um dispositivo instalado no ônibus que emite sinais semelhantes aos de uma rede Wi-Fi para serem captados por nossos usuários e compartilhar a localização do ônibus associado ao dispositivo identificado. Os usuários podem acompanhar os coletivos, postar atualizações, reportar problemas e compartilhar informações úteis com outros passageiros, facilitando a comunicação no transporte público. A imagem abaixo ilustra essa dinâmica de compartilhamento.`,
   },
 ];
 

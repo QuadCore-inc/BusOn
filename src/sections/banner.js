@@ -3,7 +3,7 @@ import { jsx, Box, Flex, Container, Heading, Text } from 'theme-ui';
 import { rgba } from 'polished';
 import Image from 'components/image';
 import SubscriptionForm from 'components/subscription-form';
-import illustration from 'assets/images/banner.jpeg';
+import illustration from 'assets/images/banner.png';
 
 const Banner = () => {
   return (
@@ -11,11 +11,11 @@ const Banner = () => {
       <Container>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
-            <Heading as="h1">
-              Aplicativo para <span className="text-[#fcad36]">compartilhamento</span> de informação entre usuários de <span className="text-[#31ABCF]">ônibus</span>.
+            <Heading as="h1" sx={styles.heading}>
+              Aplicativo para visualizar localização de ônibus em tempo real.
             </Heading>
             <Text as="p">
-            Cansado de esperar pelo ônibus e não saber onde ele está? Nosso aplicativo visa resolver esse problema com uma solução simples e inteligente. Quer saber mais? Leia nas próximas seções a nossa idéia e considere se inscrever para receber atualizações!
+            Já passou pela frustração de escolher entre pegar dois ônibus para evitar atrasos ou gastar mais em transporte particular? Todas essas indecisões acontecem porque falta uma informação essencial: a localização do seu ônibus em tempo real! Nosso app visa resolver esse problema com uma solução inteligente e colaborativa! Quer transformar suas viagens pela cidade? 🚀 Saiba mais nas próximas seções e inscreva-se para receber novidades!
             </Text>
             <SubscriptionForm sx={styles.subscriptionForm} />
           </Box>

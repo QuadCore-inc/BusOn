@@ -14,11 +14,11 @@ export default [
     label: 'Features',
   },
   {
-    path: '#subscribe',
+    path: 'subscribe',
     label: 'Inscreva-se',
   },
   {
-    path: '#about',
+    path: 'about',
     label: 'Sobre Nós',
   },
 ];

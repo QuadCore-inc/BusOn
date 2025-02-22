@@ -11,40 +11,36 @@ const teamMembers = [
   {
     name: "João Ferreira",
     role: "Frontend Developer",
-    description: "Telecommunications engineering student at UFPA and researcher at LASSE",
     imageSrc: jvictorferreira,
-    linkedin: "https://www.linkedin.com/in/jvictorferreira/",
-    github: "https://github.com/jvictorferreira",
+    linkedin: "https://www.linkedin.com/in/jvictorferreira3301/",
+    github: "https://github.com/jvictorferreira3301",
   },
   {
     name: "Joel Tavares",
-    description: "Computer engineering student at UFPA and researcher at LASSE",
     role: "Gerente de Projeto",
     imageSrc: joel,
-    linkedin: "https://www.linkedin.com/in/joel-tavares/",
-    github: "https://github.com/joeltavares",
+    linkedin: "https://www.linkedin.com/in/joel-miranda-365649236/",
+    github: "https://github.com/JoeMiran",
   },
   {
     name: "Kauan Miranda",
-    description: "Master's student in Electrical engineering at UFPA and researcher at LASSE",
     role: "Backend Developer",
     imageSrc: kauan,
-    linkedin: "https://www.linkedin.com/in/kauan-miranda/",
-    github: "https://github.com/kauanmiranda",
+    linkedin: "https://www.linkedin.com/in/kauan-miranda-a6a5ba298/",
+    github: "https://github.com/kkauanjjk",
   },
   {
     name: "Marco Maués",
-    description: "Master's student in Electrical engineering at UFPA and researcher at LASSE",
     role: "Backend Developer",
     imageSrc: marco,
-    linkedin: "https://www.linkedin.com/in/marco-maues/",
-    github: "https://github.com/marcomaues",
+    linkedin: "https://www.linkedin.com/in/marcomaues/",
+    github: "https://github.com/Mauesjr",
   },
 ];
 
 const AboutUs = () => {
   return (
-    <Box as="section" sx={styles.section}>
+    <section id="about" sx={styles.section}>
       <Container>
         <Heading as="h2" sx={styles.heading}>Sobre Nós</Heading>
         <Flex sx={styles.grid}>
@@ -68,7 +64,7 @@ const AboutUs = () => {
           ))}
         </Flex>
       </Container>
-    </Box>
+      </section>
   );
 };
 

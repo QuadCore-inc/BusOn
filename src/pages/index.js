@@ -24,7 +24,6 @@ export default function IndexPage() {
         <Banner />
         <Support />
         <PremiumFeature />
-        <AppFeature />
         <Subscribe />
         <Dashboard />
       </Layout>

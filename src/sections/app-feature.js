@@ -2,7 +2,7 @@
 import { jsx, Box, Grid, Flex, Container, Image, Text } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import { LearnMore } from 'components/link';
-import app from 'assets/images/app.png';
+import app from 'assets/images/messenger.png';
 import emoji from 'assets/images/icons/emoji.png';
 import check from 'assets/images/icons/check-circle.png';
 import messenger from 'assets/images/messenger.png';
@@ -10,27 +10,27 @@ import messenger from 'assets/images/messenger.png';
 const data = [
   {
     id: 1,
-    label: 'Médica e visão',
+    label: 'Visualizar linhas de ônibus disponíveis.',
   },
   {
     id: 2,
-    label: 'Seguro de vida',
+    label: 'Escolher linhas de ônibus.',
   },
   {
     id: 3,
-    label: '400(k) de economia',
+    label: 'Visualizar localização do ônibus',
   },
   {
     id: 4,
-    label: 'HSAs e FSAs',
+    label: 'Compartilhar localização automaticamente',
   },
   {
     id: 5,
-    label: 'Benefícios de deslocamento',
+    label: 'Notificar lotação do ônibus',
   },
   {
     id: 6,
-    label: 'Economia de 529 faculdade',
+    label: 'Histórico de linhas utilizadas',
   },
 ];
 
@@ -43,8 +43,8 @@ const AppFeature = () => {
             <SectionHeading
               emoji={emoji}
               sx={styles.heading}
-              title="Construído em um app para dar uma resposta instantânea no menor tempo possível"
-              description="Obtenha seus testes entregues em let home coletar amostras da vitória das gerências que fornecem as melhores diretrizes de sistema de design de todos os tempos."
+              title="BusON, o assistente de mobilidade construído em um app para dar uma resposta instantânea no menor tempo possível"
+              description="...."
             />
             <Box sx={styles.features}>
               {data?.map(({ id, label }) => (
