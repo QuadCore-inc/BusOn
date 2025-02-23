@@ -1,0 +1,18 @@
+# ninja log v5
+3	45	0	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/x86_64/CMakeFiles/cmake.verify_globs	c3a62b746a90d2ab
+0	10	0	clean	1080a16e24f435a0
+1	3559	7620335180890249	CMakeFiles/appmodules.dir/86a234eadf535bf7a1180c23aeeddc05/github/QuadCore/root/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	37e0d0e100ca77a
+8	3885	7620335184068749	CMakeFiles/appmodules.dir/OnLoad.cpp.o	2d4bb732f22809f7
+3886	4104	7620335186365909	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/build/intermediates/cxx/Debug/184a593k/obj/x86_64/libappmodules.so	3cb88bbe8aeffe9f
+46	305	7620338241393612	build.ninja	a8166dc8969dd6bb
+1	35	0	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/x86_64/CMakeFiles/cmake.verify_globs	c3a62b746a90d2ab
+12	3427	7620338276340604	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/States.cpp.o	fb7db0e5e3fb10c8
+98	3957	7620338281617001	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/EventEmitters.cpp.o	8f43767e63335d02
+60	4438	7620338286395548	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/Props.cpp.o	a9f43c317563fbb9
+21	4513	7620338287170849	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/ShadowNodes.cpp.o	8f06d551af064be0
+80	4559	0	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/RNCGeolocationSpecJSI-generated.cpp.o	bb92097ef3758db8
+45	4836	7620338290366592	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/RNCGeolocationSpec-generated.cpp.o	466295d0c2901c34
+137	4880	7620338290796698	CMakeFiles/appmodules.dir/86a234eadf535bf7a1180c23aeeddc05/github/QuadCore/root/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	b6bf1cf1207436f4
+118	4964	7620338291692321	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/f3ee4c34af00dbdcf11b60ec1cbc8a99/ComponentDescriptors.cpp.o	190fc5c9b8b27a54
+31	5070	7620338292708303	CMakeFiles/appmodules.dir/OnLoad.cpp.o	17fbda84a4a6c2be
+5071	5238	7620338294420131	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/build/intermediates/cxx/Debug/184a593k/obj/x86_64/libappmodules.so	d86990c7a0c6f190

@@ -1,0 +1,12 @@
+# ninja log v5
+3	34	0	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/.cxx/Debug/704c5p2g/x86_64/CMakeFiles/cmake.verify_globs	abc9b0f18e18f3dd
+63	4431	7620304385700816	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/f3ee4c34af00dbdcf11b60ec1cbc8a99/States.cpp.o	da2b02111f422f92
+39	5247	0	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/EventEmitters.cpp.o	6b53d9b1e3cc1858
+30	6208	7620304403130608	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/f3ee4c34af00dbdcf11b60ec1cbc8a99/Props.cpp.o	eb0e5a654b6a3649
+90	6507	7620304406135892	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/f3ee4c34af00dbdcf11b60ec1cbc8a99/ShadowNodes.cpp.o	d51841e40caf6a16
+77	6634	0	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/RNCGeolocationSpecJSI-generated.cpp.o	8fc3734be2488cd2
+9	6742	7620304408507799	CMakeFiles/appmodules.dir/ec7027d16d69a0dc76a0c44f7f23b436/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	9732a49533e0ccf6
+19	6954	7620304410706549	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/RNCGeolocationSpec-generated.cpp.o	abf495db68c02a2
+52	7323	0	RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir/react/renderer/components/RNCGeolocationSpec/ComponentDescriptors.cpp.o	38042fc624deb63f
+2	7506	7620304416315101	CMakeFiles/appmodules.dir/OnLoad.cpp.o	c45c0363b7390e7e
+7507	7757	7620304419015817	C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/src/wifi_components/android/app/build/intermediates/cxx/Debug/704c5p2g/obj/x86_64/libappmodules.so	dec71284b1c76dc3
