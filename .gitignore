@@ -1,5 +1,49 @@
-src/wifi_components/android/.gradle/
-src/wifi_components/android/build/
-src/wifi_components/ios/
-src/wifi_components/android/app/build/
-src/wifi_components/node_nodules/
+# Node.js dependencies
+root/node_modules/
+root/package-lock.json
+root/npm-debug.log*
+root/yarn-error.log
+
+# Logs
+root/logs/
+root/*.log
+root/debug.log*
+root/lerna-debug.log*
+root/npm-debug.log*
+
+# Build outputs
+root/build/
+root/dist/
+root/android/app/build/
+root/android/.gradle/
+root/android/.idea/
+root/ios/Pods/
+root/ios/build/
+root/ios/.xcworkspace/
+root/ios/*.xcuserstate
+root/ios/DerivedData/
+
+# React Native / Metro bundler cache
+root/.expo/
+root/.expo-shared/
+root/.bundle/
+root/react-native-packager-cache-*
+root/__generated__/
+
+# Test coverage
+root/coverage/
+root/jest-cache/
+root/jest-transform-cache/
+
+# Miscellaneous
+root/.vscode/
+root/.idea/
+root/.DS_Store
+root/*.swp
+root/*.swo
+root/*.sublime-workspace
+
+# Environment variables
+root/.env
+root/.env.local
+root/.env.*.local
