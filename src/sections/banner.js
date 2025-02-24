@@ -12,10 +12,10 @@ const Banner = () => {
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
             <Heading as="h1" sx={styles.heading}>
-              Aplicativo para visualizar localização de ônibus em tempo real.
+            BusON, seu ônibus a um clique de distância!
             </Heading>
             <Text as="p">
-            Já passou pela frustração de escolher entre pegar dois ônibus para evitar atrasos ou gastar mais em transporte particular? Todas essas indecisões acontecem porque falta uma informação essencial: a localização do seu ônibus em tempo real! Nosso app visa resolver esse problema com uma solução inteligente e colaborativa! Quer transformar suas viagens pela cidade? 🚀 Saiba mais nas próximas seções e inscreva-se para receber novidades!
+            Saiba onde está seu ônibus em tempo real, não fique esperando no escuro. Leia nossa idéia nas seções seguintes e considere se inscrever para receber atualizações.
             </Text>
             <SubscriptionForm sx={styles.subscriptionForm} />
           </Box>

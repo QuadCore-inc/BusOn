@@ -57,7 +57,7 @@ const AppFeature = () => {
             <LearnMore label="Explore mais" path="#!" />
           </Box>
           <Box sx={styles.illustration}>
-            <Image src={messenger} alt="workHard" />
+            <Image src={messenger} alt="App Screenshot" sx={styles.appImage} />
           </Box>
         </Grid>
       </Container>
@@ -88,7 +88,6 @@ const styles = {
       color: 'heading',
       fontSize: ['24px', null, null, '36px', '31px', 10, 40],
       lineHeight: [1.33, 1.33, 1.26, null, 1.5, 1.26],
-      letterSpacing: '-1px',
       letterSpacing: '-1px',
     },
     img: {
@@ -121,13 +120,15 @@ const styles = {
     mt: [0],
     zIndex: '-1',
     img: {
-      display: ['none', null, null, null, 'block'],
+      display: 'block',
+      maxWidth: '55%',
+      height: 'auto',
     },
-    '@media screen and (max-width: 767px)': {
-      background: `transparent url(${app}) no-repeat center top / cover`,
-      width: '100%',
-      minHeight: 310,
-      marginBottom: 40,
-    },
+  },
+  appImage: {
+    width: '100%',
+    maxWidth: '300px',
+    mx: 'auto',
+    display: 'block',
   },
 };
