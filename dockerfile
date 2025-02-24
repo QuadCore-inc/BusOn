@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instalar TODAS as dependências (incluindo devDependencies)
-RUN npm install
+RUN npm install 
 
 # Copiar o restante do código
 COPY . .
@@ -34,3 +34,6 @@ COPY --from=builder /app/next.config.js next.config.js
 
 # Expor a porta da aplicação
 EXPOSE 3000
+ 
+# Iniciar o servidor
+CMD ["npm", "start"]
