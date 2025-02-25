@@ -3,3 +3,4 @@ src/wifi_components/android/build/
 src/wifi_components/ios/
 src/wifi_components/android/app/build/
 src/wifi_components/node_nodules/
+src\wifi_components\android\app\.cxx\Debug
