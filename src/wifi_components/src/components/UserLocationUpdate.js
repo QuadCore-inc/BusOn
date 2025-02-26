@@ -15,28 +15,37 @@ import {
 
 
   export function UserLocationUpdate() {
-    const [location, setLocation] = useState({ longitude: -48.5024, latitude: -1.45502 });
-    
+    const [followLocation, setFollowLocation] = useState(true); // Estado para seguir ou parar de seguir
+    // const [ws, setWs] = useState(null);    
+
     useEffect(() => {
       const ws = new WebSocket("ws://192.168.100.176:8765");
-    
+      const data = JSON.parse(event.data);
+      const [location, setLocation] = useState({ longitude: event.longitude, latitude: event.latitude});
+      // setWs(websocket);
+      
       ws.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        setLocation({ longitude: data.longitude, latitude: data.latitude });
+        if (followLocation){
+          const data = JSON.parse(event.data);
+          setLocation({ longitude: data.longitude, latitude: data.latitude});
+        }
+        // const data = JSON.parse(event.data);
+        // setLocation({ longitude: data.longitude, latitude: data.latitude });
       };
       ws.onerror = (error) => console.error("WebSocket Error:", error);
       ws.onclose = () => console.log("WebSocket Fechado");
   
       return () => ws.close(); 
-    }, []);
+    }, [followLocation]);
   
     return (
       <>
         <MapView style={styles.map} mapStyle={styleUrl}>
           {/* <UserLocation onUpdate={(newLocation) => setLocation(newLocation)} /> */}
-          <MarkerView coordinate={[location.longitude, location.latitude]}>
-            <View style={{ backgroundColor: "red", padding: 5, borderRadius: 5 }}>
-              <Text style={{ color: "black" }}>📍 Aqui!</Text>
+          <MarkerView coordinate={[location.longitude, location.latitude]} anchor={{x:0, y:1}}>
+
+             <View style={{ backgroundColor: "red", padding: 5, borderRadius: 5 }}>
+              <Text style={{ color: "black" }}>📍</Text>
             </View>
           </MarkerView>
           {/* <Camera followUserLocation followZoomLevel={16} /> */}
@@ -44,10 +53,15 @@ import {
 
         </MapView>
         <View style={{ position: "absolute", top: 10, left: 10, backgroundColor: "white", padding: 10, borderRadius: 5 }}>
-        <Text>📡 Localização Atual:</Text>
-        <Text>Longitude: {location.longitude}</Text>
-        <Text>Latitude: {location.latitude}</Text>
-      </View>
+          <Text>📡 Localização Atual:</Text>
+          <Text>Longitude: {location.longitude}</Text>
+          <Text>Latitude: {location.latitude}</Text>
+          <Button
+            title={followLocation?"Parar de seguir" : "Seguir Localização"}
+            onPress={()=>setFollowLocation(!followLocation)}
+          />
+        </View>
+
       </>
     );
   }
