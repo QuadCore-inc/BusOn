@@ -4,7 +4,7 @@ import {
     UserLocation,
   } from "@maplibre/maplibre-react-native";
   import { useState, useEffect } from "react";
-  import { Text, StyleSheet } from "react-native";
+  import { Text, StyleSheet, PermissionsAndroid, Platform  } from "react-native";
   import { Bubble } from "./Bubble";
   import axios from "axios";
   import Geolocation from "@react-native-community/geolocation";
@@ -27,6 +27,35 @@ import {
   }
   
   const intervalOfUserLocationUpdate = 1000; // Atualiza a cada 1s
+
+  const API_HOST = '200.239.93.249'
+
+  const requestLocationPermission = async () => {
+    if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: "Permissão de Localização",
+            message: "Precisamos acessar sua localização para mostrar o mapa.",
+            buttonNeutral: "Perguntar depois",
+            buttonNegative: "Cancelar",
+            buttonPositive: "OK",
+          }
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          console.log("Permissão para acessar localização concedida");
+        } else {
+          console.log("Permissão para acessar localização negada");
+        }
+      } catch (err) {
+        console.warn(err);
+      }
+    } else {
+      // Para iOS, a permissão já será solicitada automaticamente
+      console.log("Para iOS, a permissão é gerenciada no Info.plist");
+    }
+  };
   
   export function UserLocationUpdate() {
     const [location, setLocation] = useState<UserLocationData | null>(null);
@@ -66,8 +95,8 @@ import {
     // 🔥 Envia a localização para a API
     const sendLocationToAPI = async (newLocation: UserLocationData) => {
       try {
-        const response = await axios.post("http://192.168.100.102:5000/localizacao", {
-          ssid: "buson-306-01",
+        const response = await axios.post(`http://${API_HOST}:5000/localizacao`, {
+          ssid: "buson_306_01",
           latitude: newLocation.coords.latitude,
           longitude: newLocation.coords.longitude,
           speed: newLocation.coords.speed || 0,
@@ -88,6 +117,7 @@ import {
     };
   
     useEffect(() => {
+      requestLocationPermission();
       const intervalId = setInterval(updateUserLocation, intervalOfUserLocationUpdate);
   
       return () => clearInterval(intervalId); 
