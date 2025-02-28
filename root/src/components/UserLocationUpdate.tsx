@@ -10,12 +10,12 @@ const styleUrl = `https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_ke
 const intervalOfUserLocationUpdate = 2000;
 
 function UpdateUserLocation() {
-    const [location] = useUserLocation(); // Certificando-se de que 'location' seja o primeiro valor retornado pelo hook
+    const location = useUserLocation(); // Certificando-se de que 'location' seja o primeiro valor retornado pelo hook
 
     return (
         <>
             <MapView style={styles.map} mapStyle={styleUrl}>
-                <UserLocation onUpdate={(newLocation) => setLocation(newLocation)} />
+                <UserLocation onUpdate={(newLocation) => setLocation(newLocation)} renderMode='native'/>
                 <Camera followUserLocation followZoomLevel={16} />
             </MapView>
 

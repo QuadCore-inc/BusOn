@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 import Geolocation from "@react-native-community/geolocation"
 import { PermissionsAndroid, Platform } from "react-native"
 
-const intervalOfUserLocationUpdate = 2000 // Atualiza a cada 2 segundos
+const intervalOfUserLocationUpdate = 1000 // Atualiza a cada 2 segundos
 
 interface UserLocationCoords {
   longitude: number
@@ -57,7 +57,7 @@ export const useUserLocation = () => {
         console.log("Localização atualizada:", locationData)
       },
       (error) => console.error("Erro ao obter localização:", error),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 0 }
+      { enableHighAccuracy: false, timeout: 20000, maximumAge: 0 }
     )
   }
 
@@ -66,9 +66,5 @@ export const useUserLocation = () => {
     return () => clearInterval(updateInterval) // Limpa o intervalo ao desmontar
   }, []) // Só executa uma vez ao montar o hook
 
-  useEffect(() => {
-    console.log(location)
-  }, [location])
-
-  return [location, updateUserLocation]
-};
+  return location
+}
