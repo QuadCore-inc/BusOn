@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { UserLocationUpdate } from './src/components/UserLocationUpdate';
+// import { UserLocationUpdate } from './src/components/UserLocationUpdate';
 import WifiDetails from './src/components/WifiScanner';
+import UserLocationUpdate from './src/components/Location';
 
 const styles = StyleSheet.create({
   page: {
@@ -21,8 +22,8 @@ const App: React.FC = () => {
   return (
     <View style={styles.page}>
       {/* <MapComponent /> */}
-      {/* <UserLocationUpdate /> */}
-      <WifiDetails />
+      <UserLocationUpdate />
+      {/* <WifiDetails /> */}
     </View>
   );
 };

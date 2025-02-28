@@ -22,10 +22,23 @@ const WifiDetails: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: 'white', padding: 20 },
-    header: { fontSize: 20, fontWeight: 'bold', color: 'black' },
-    wifiItem: { color: 'black', marginTop: 5 },
-    noWifiText: { color: 'gray', marginTop: 10 },
+    container: { 
+        flex: 1,
+        backgroundColor: 'white', 
+        padding: 20 },
+    header: { 
+        fontSize: 20, 
+        fontWeight: 'bold', 
+        color: 'black' 
+    },
+    wifiItem: { 
+        color: 'black', 
+        marginTop: 5 
+    },
+    noWifiText: { 
+        color: 'gray', 
+        marginTop: 10 
+    },
 });
 
 export default WifiDetails;

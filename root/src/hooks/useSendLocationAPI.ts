@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_HOST = '200.239.93.249';
+const API_HOST = '192.168.100.102';
 
 interface LocationData {
   ssid: string;

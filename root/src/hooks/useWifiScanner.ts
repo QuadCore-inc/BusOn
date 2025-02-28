@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { PermissionsAndroid } from 'react-native'
 import WifiReborn, { WifiEntry } from 'react-native-wifi-reborn'
 
-const busonKey = 'Lasse'
+const busonKey = 'FRA'
 const updateWiFiListInterval = 3000  // Intervalo para atualização da lista de Wi-Fi
 
 export const useWifiScanner = () => {
