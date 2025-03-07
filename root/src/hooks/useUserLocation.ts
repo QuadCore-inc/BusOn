@@ -54,7 +54,7 @@ export const useUserLocation = () => {
           },
         }
         setLocation(locationData)
-        console.log("Localização atualizada:", locationData)
+        // console.log("Localização atualizada:", locationData)
       },
       (error) => console.error("Erro ao obter localização:", error),
       { enableHighAccuracy: false, timeout: 20000, maximumAge: 0 }

@@ -1,25 +1,183 @@
 {
-  "root": "/home/kauan/Documents/projetos3/QuadCore/root",
-  "reactNativePath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/react-native",
+  "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root",
+  "reactNativePath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native",
   "reactNativeVersion": "0.77",
   "dependencies": {
+    "@notifee/react-native": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@notifee\\react-native",
+      "name": "@notifee/react-native",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@notifee\\react-native\\RNNotifee.podspec",
+          "version": "9.1.8",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@notifee\\react-native\\android",
+          "packageImportPath": "import io.invertase.notifee.NotifeePackage;",
+          "packageInstance": "new NotifeePackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/@notifee/react-native/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "@supersami/rn-foreground-service": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@supersami\\rn-foreground-service",
+      "name": "@supersami/rn-foreground-service",
+      "platforms": {
+        "ios": null,
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@supersami\\rn-foreground-service\\android",
+          "packageImportPath": "import com.supersami.foregroundservice.ForegroundServicePackage;",
+          "packageInstance": "new ForegroundServicePackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/@supersami/rn-foreground-service/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "@voximplant/react-native-foreground-service": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@voximplant\\react-native-foreground-service",
+      "name": "@voximplant/react-native-foreground-service",
+      "platforms": {
+        "ios": null,
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@voximplant\\react-native-foreground-service\\android",
+          "packageImportPath": "import com.voximplant.foregroundservice.VIForegroundServicePackage;",
+          "packageInstance": "new VIForegroundServicePackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/@voximplant/react-native-foreground-service/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-background-actions": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-background-actions",
+      "name": "react-native-background-actions",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-background-actions\\react-native-background-actions.podspec",
+          "version": "4.0.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-background-actions\\android",
+          "packageImportPath": "import com.asterinet.react.bgactions.BackgroundActionsPackage;",
+          "packageInstance": "new BackgroundActionsPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/react-native-background-actions/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-background-timer": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-background-timer",
+      "name": "react-native-background-timer",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-background-timer\\react-native-background-timer.podspec",
+          "version": "2.4.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-background-timer\\android",
+          "packageImportPath": "import com.ocetnik.timer.BackgroundTimerPackage;",
+          "packageInstance": "new BackgroundTimerPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/react-native-background-timer/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-geolocation-service": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-geolocation-service",
+      "name": "react-native-geolocation-service",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-geolocation-service\\react-native-geolocation-service.podspec",
+          "version": "5.3.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-geolocation-service\\android",
+          "packageImportPath": "import com.agontuk.RNFusedLocation.RNFusedLocationPackage;",
+          "packageInstance": "new RNFusedLocationPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/react-native-geolocation-service/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-location": {
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-location",
+      "name": "react-native-location",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-location\\react-native-location.podspec",
+          "version": "2.5.0",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-location\\android",
+          "packageImportPath": "import com.github.reactnativecommunity.location.RNLocationPackage;",
+          "packageInstance": "new RNLocationPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/react-native-location/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
     "@maplibre/maplibre-react-native": {
-      "root": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@maplibre/maplibre-react-native",
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@maplibre\\maplibre-react-native",
       "name": "@maplibre/maplibre-react-native",
       "platforms": {
         "ios": {
-          "podspecPath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@maplibre/maplibre-react-native/maplibre-react-native.podspec",
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@maplibre\\maplibre-react-native\\maplibre-react-native.podspec",
           "version": "10.1.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@maplibre/maplibre-react-native/android",
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@maplibre\\maplibre-react-native\\android",
           "packageImportPath": "import org.maplibre.reactnative.MLRNPackage;",
           "packageInstance": "new MLRNPackage()",
           "buildTypes": [],
           "componentDescriptors": [],
-          "cmakeListsPath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@maplibre/maplibre-react-native/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/@maplibre/maplibre-react-native/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -28,23 +186,23 @@
       }
     },
     "@react-native-community/geolocation": {
-      "root": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@react-native-community/geolocation",
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@react-native-community\\geolocation",
       "name": "@react-native-community/geolocation",
       "platforms": {
         "ios": {
-          "podspecPath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@react-native-community/geolocation/react-native-geolocation.podspec",
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@react-native-community\\geolocation\\react-native-geolocation.podspec",
           "version": "3.4.0",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@react-native-community/geolocation/android",
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\@react-native-community\\geolocation\\android",
           "packageImportPath": "import com.reactnativecommunity.geolocation.GeolocationPackage;",
           "packageInstance": "new GeolocationPackage()",
           "buildTypes": [],
           "libraryName": "RNCGeolocationSpec",
           "componentDescriptors": [],
-          "cmakeListsPath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -53,22 +211,22 @@
       }
     },
     "react-native-wifi-reborn": {
-      "root": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/react-native-wifi-reborn",
+      "root": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-wifi-reborn",
       "name": "react-native-wifi-reborn",
       "platforms": {
         "ios": {
-          "podspecPath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/react-native-wifi-reborn/RNWifi.podspec",
+          "podspecPath": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-wifi-reborn\\RNWifi.podspec",
           "version": "4.13.4",
           "configurations": [],
           "scriptPhases": []
         },
         "android": {
-          "sourceDir": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/react-native-wifi-reborn/android",
+          "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\node_modules\\react-native-wifi-reborn\\android",
           "packageImportPath": "import com.reactlibrary.rnwifi.RNWifiPackage;",
           "packageInstance": "new RNWifiPackage()",
           "buildTypes": [],
           "componentDescriptors": [],
-          "cmakeListsPath": "/home/kauan/Documents/projetos3/QuadCore/root/node_modules/react-native-wifi-reborn/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cmakeListsPath": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/node_modules/react-native-wifi-reborn/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -234,7 +392,7 @@
         {
           "name": "--path <path>",
           "description": "Path to the React Native project root.",
-          "default": "/home/kauan/Documents/projetos3/QuadCore/root"
+          "default": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root"
         },
         {
           "name": "--platform <string>",
@@ -286,7 +444,7 @@
         {
           "name": "--terminal <string>",
           "description": "Launches the Metro Bundler in a new window using the specified terminal path.",
-          "default": "xterm-256color"
+          "default": "cmd.exe"
         },
         {
           "name": "--binary-path <string>",
@@ -446,7 +604,7 @@
         {
           "name": "--terminal <string>",
           "description": "Launches the Metro Bundler in a new window using the specified terminal path.",
-          "default": "xterm-256color"
+          "default": "cmd.exe"
         },
         {
           "name": "--appId <string>",
@@ -521,7 +679,7 @@
   "assets": [],
   "project": {
     "ios": {
-      "sourceDir": "/home/kauan/Documents/projetos3/QuadCore/root/ios",
+      "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\ios",
       "xcodeProject": {
         "name": "wifi_components.xcodeproj",
         "path": ".",
@@ -530,7 +688,7 @@
       "assets": []
     },
     "android": {
-      "sourceDir": "/home/kauan/Documents/projetos3/QuadCore/root/android",
+      "sourceDir": "C:\\Users\\kkaua\\Documents\\Projetos-III\\github\\QuadCore\\root\\android",
       "appName": "app",
       "packageName": "com.wifi_components",
       "applicationId": "com.wifi_components",
