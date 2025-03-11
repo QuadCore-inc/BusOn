@@ -30,7 +30,7 @@ async def send_location(websocket):
             await websocket.send(json.dumps(location_data))
             print(f"Enviando localização: {location_data}")
             
-            await asyncio.sleep(0.1)  # Enviar uma nova coordenada a cada 2 segundos
+            await asyncio.sleep(0.3)  # Enviar uma nova coordenada a cada 2 segundos
 
 async def main():
     async with websockets.serve(send_location, "0.0.0.0", 8765):  
