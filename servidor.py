@@ -20,6 +20,8 @@ for linestring in root.findall(".//{http://www.opengis.net/kml/2.2}LineString/{h
     coordenadas_lista.extend(coordenadas)
 
 async def send_location(websocket):
+    bus_id = await websocket.recv()
+    print(bus_id)
     while True:
         for coord in coordenadas_lista:
             location_data = {
@@ -29,8 +31,10 @@ async def send_location(websocket):
             
             await websocket.send(json.dumps(location_data))
             print(f"Enviando localização: {location_data}")
-            
-            await asyncio.sleep(0.3)  # Enviar uma nova coordenada a cada 2 segundos
+            #print(type(websocket))
+            #no banco buscar o mais recente e enviaria e dormiria de novo
+
+            await asyncio.sleep(1)  # Enviar uma nova coordenada a cada 2 segundos
 
 async def main():
     async with websockets.serve(send_location, "0.0.0.0", 8765):  
