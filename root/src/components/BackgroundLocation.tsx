@@ -1,41 +1,23 @@
-import React, { useContext, useEffect } from 'react';
+// BackgroundLocation.tsx
+import React, { useContext } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import BackgroundLocationContext from '../contexts/UserLocationContext';
+import UserLocationContext from '../contexts/UserLocationContext';
 
 export default function BackgroundLocation() {
-  const { value, isRunning, location, startBackgroundTask, stopBackgroundTask } =
-    useContext(BackgroundLocationContext);
-
-  useEffect(() => {
-    console.log('Tarefa em background rodando:', isRunning);
-  }, [isRunning]);
+  const { location, getCurrentLocation } = useContext(UserLocationContext);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Valor do Contexto: {value}</Text>
-      <Text style={styles.text}>Tarefa rodando: {isRunning ? 'Sim' : 'Não'}</Text>
-      <Text style={styles.text}>Rastreamento: {isRunning ? 'Ativo' : 'Parado'}</Text>
-
+      <Text style={styles.text}>Sua Localização Atual:</Text>
       {location ? (
         <Text style={styles.text}>
           📍 Latitude: {location.latitude}{'\n'}
           📍 Longitude: {location.longitude}
         </Text>
-        ) : (
-            <Text style={styles.text}>Aguardando localização</Text>
+      ) : (
+        <Text style={styles.text}>Obtendo localização...</Text>
       )}
-
-      <Button
-        title={isRunning ? 'Tarefa em execução' : 'Iniciar Rastreamento'}
-        onPress={startBackgroundTask}
-        // disabled={isRunning}
-      />
-
-      <Button
-        title="Parar Rastreamento"
-        onPress={stopBackgroundTask}
-        // disabled={!isRunning}
-      />
+      <Button title="Atualizar Localização" onPress={getCurrentLocation} />
     </View>
   );
 }
@@ -45,10 +27,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#282c34',
   },
   text: {
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 20,
     color: 'white',
+    textAlign: 'center',
   },
 });

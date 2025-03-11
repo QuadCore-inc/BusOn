@@ -8,7 +8,7 @@ import {
   watchMerchantPosition,
   watchMerchantPositionError,
   watchMerchantPositionSuccess,
-} from './src/utils/utils';
+} from './utils';
 
 export default function BackgroundNotificationWithActions() {
   const watchId = useRef<number | null>(null);
