@@ -23,13 +23,13 @@ export function UserLocationUpdate() {
     if (followLocation) {
       // Se não houver conexão ativa, cria uma nova
       if (!socket) {
-        socket = new WebSocket("ws://192.168.100.176:8765");
+        socket = new WebSocket("ws://192.168.100.102:8765");
         setWs(socket);
 
         socket.onopen = () => {
           console.log("WebSocket conectado.");
           // Envia mensagem inicial ao servidor
-          socket.send("131");
+          socket.send("bus_sima");
         };
 
         socket.onmessage = (event) => {
