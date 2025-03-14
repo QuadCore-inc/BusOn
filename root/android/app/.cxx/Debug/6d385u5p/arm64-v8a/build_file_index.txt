@@ -1,2 +1,0 @@
-/home/kauan/Documents/projetos3/QuadCore/root/node_modules/@react-native-community/geolocation/android/build/generated/source/codegen/jni/CMakeLists.txt
-/home/kauan/Documents/projetos3/QuadCore/root/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/CMakeLists.txt

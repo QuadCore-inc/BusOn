@@ -1,6 +1,0 @@
-/home/kauan/Documents/projetos3/QuadCore/root/android/app/.cxx/Debug/6d385u5p/x86_64/CMakeFiles/appmodules.dir
-/home/kauan/Documents/projetos3/QuadCore/root/android/app/.cxx/Debug/6d385u5p/x86_64/CMakeFiles/edit_cache.dir
-/home/kauan/Documents/projetos3/QuadCore/root/android/app/.cxx/Debug/6d385u5p/x86_64/CMakeFiles/rebuild_cache.dir
-/home/kauan/Documents/projetos3/QuadCore/root/android/app/.cxx/Debug/6d385u5p/x86_64/RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir
-/home/kauan/Documents/projetos3/QuadCore/root/android/app/.cxx/Debug/6d385u5p/x86_64/RNCGeolocationSpec_autolinked_build/CMakeFiles/edit_cache.dir
-/home/kauan/Documents/projetos3/QuadCore/root/android/app/.cxx/Debug/6d385u5p/x86_64/RNCGeolocationSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

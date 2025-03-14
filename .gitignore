@@ -1,49 +1,12 @@
-# Node.js dependencies
-root/node_modules/
-root/package-lock.json
-root/npm-debug.log*
-root/yarn-error.log
+# Ignorar arquivos e pastas de build do Android
+**/build/
+**/.cxx/
+**/cmake/
+**/generated/
+**/android_gradle_build.json
+**/android_gradle_build_mini.json
 
-# Logs
-root/logs/
-root/*.log
-root/debug.log*
-root/lerna-debug.log*
-root/npm-debug.log*
-
-# Build outputs
-root/build/
-root/dist/
-root/android/app/build/
-root/android/.gradle/
-root/android/.idea/
-root/ios/Pods/
-root/ios/build/
-root/ios/.xcworkspace/
-root/ios/*.xcuserstate
-root/ios/DerivedData/
-
-# React Native / Metro bundler cache
-root/.expo/
-root/.expo-shared/
-root/.bundle/
-root/react-native-packager-cache-*
-root/__generated__/
-
-# Test coverage
-root/coverage/
-root/jest-cache/
-root/jest-transform-cache/
-
-# Miscellaneous
-root/.vscode/
-root/.idea/
-root/.DS_Store
-root/*.swp
-root/*.swo
-root/*.sublime-workspace
-
-# Environment variables
-root/.env
-root/.env.local
-root/.env.*.local
+# Ignorar arquivos específicos de depuração e ninja
+**/*.ninja
+**/*.log
+**/*.json

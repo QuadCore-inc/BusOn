@@ -1,6 +1,0 @@
-C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeFiles/appmodules.dir
-C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/RNCGeolocationSpec_autolinked_build/CMakeFiles/react_codegen_RNCGeolocationSpec.dir
-C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/RNCGeolocationSpec_autolinked_build/CMakeFiles/edit_cache.dir
-C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/RNCGeolocationSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

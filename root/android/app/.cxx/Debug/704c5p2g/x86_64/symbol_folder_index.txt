@@ -1,1 +1,0 @@
-C:\Users\kkaua\Documents\Projetos-III\github\QuadCore\src\wifi_components\android\app\build\intermediates\cxx\Debug\704c5p2g\obj\x86_64
