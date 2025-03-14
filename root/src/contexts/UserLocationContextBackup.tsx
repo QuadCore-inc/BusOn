@@ -7,7 +7,14 @@ import { LocationData } from '../utils/interfaces';
 
 const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 
-const BackgroundLocationContext = createContext({
+interface BackgroundLocationContextType {
+  userLocation: LocationData | null;
+  isRunning: boolean;
+  startBackgroundTask: () => Promise<void>;
+  stopBackgroundTask: () => Promise<void>;
+}
+
+const BackgroundLocationContext = createContext<BackgroundLocationContextType>({
   userLocation: null,
   isRunning: false,
   startBackgroundTask: async () => {},
