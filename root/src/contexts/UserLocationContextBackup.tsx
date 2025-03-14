@@ -3,11 +3,12 @@ import React, { useEffect, useState, createContext } from 'react';
 import { Platform, PermissionsAndroid } from 'react-native';
 import BackgroundJob from 'react-native-background-actions';
 import Geolocation from '@react-native-community/geolocation';
+import { LocationData } from '../utils/interfaces';
 
 const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 
 const BackgroundLocationContext = createContext({
-  location: null,
+  userLocation: null,
   isRunning: false,
   startBackgroundTask: async () => {},
   stopBackgroundTask: async () => {},
@@ -15,7 +16,7 @@ const BackgroundLocationContext = createContext({
 
 export function BackgroundLocationProvider({ children }: any) {
   const [isRunning, setIsRunning] = useState(false);
-  const [location, setLocation] = useState(null);
+  const [userLocation, setUserLocation] = useState<LocationData | null >(null);
 
   const requestPermissions = async () => {
     if (Platform.OS === 'android') {
@@ -33,7 +34,10 @@ export function BackgroundLocationProvider({ children }: any) {
     return true;
   };
 
-  const trackLocationTask = async (taskDataArguments: { delay: number }) => {
+  const trackLocationTask = async (taskDataArguments: { delay: number } = { delay: 2000 }) => {
+    if (!taskDataArguments) {
+      throw new Error('taskDataArguments is undefined');
+    }
     const { delay } = taskDataArguments;
 
     while (BackgroundJob.isRunning()) {
@@ -41,9 +45,12 @@ export function BackgroundLocationProvider({ children }: any) {
       Geolocation.getCurrentPosition(
         (position) => {
           console.log('✅ Localização obtida:', position.coords);
-          setLocation({
+          setUserLocation({
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
+            speed: position.coords.speed,
+            heading: position.coords.heading,
+            user_timestamp: position.timestamp,
           });
         },
         (error) => {
@@ -94,7 +101,7 @@ export function BackgroundLocationProvider({ children }: any) {
 
   return (
     <BackgroundLocationContext.Provider
-      value={{ location, isRunning, startBackgroundTask, stopBackgroundTask }}
+      value={{ userLocation, isRunning, startBackgroundTask, stopBackgroundTask }}
     >
       {children}
     </BackgroundLocationContext.Provider>

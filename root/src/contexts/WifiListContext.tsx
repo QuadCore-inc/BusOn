@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Platform, PermissionsAndroid, Button } from 'react-native';
+import {
+    View, 
+    Text,
+    StyleSheet,
+    Platform, 
+    PermissionsAndroid, 
+    Button } from 'react-native';
+
 import BackgroundJob from 'react-native-background-actions';
 import WifiReborn, { WifiEntry } from 'react-native-wifi-reborn';
 import Geolocation from '@react-native-community/geolocation';
+import axios from 'axios';
 
-const updateWiFiListInterval = 3000; // Intervalo de atualização da lista de Wi-Fi
-const busonKey = 'DIR'; // Chave para filtrar beacons
+import { CrowdsourcingData, LocationData } from '../utils/interfaces';
+import { API_HOST } from '../utils/apiKeys';
+
+const busonKey = 'FRA'; // Chave para filtrar beacons
 
 const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 
 const WifiDetailsProvider: React.FC = () => {
+    const [isReady, setIsReady] = useState(false);
+    useEffect(() => {
+        setIsReady(true); // Marca o componente como pronto
+    }, []);
+
     const [isRunning, setIsRunning] = useState(false);
     const [wifiPermission, setWifiPermission] = useState<boolean>(false);
     const [wifiList, setWifiList] = useState<WifiEntry[]>([]);
     const [beaconList, setBeaconList] = useState<WifiEntry[]>([]);
-    const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
+    const [userLocation, setUserLocation] = useState<LocationData | null>(null);
 
     // Solicita permissões necessárias
     const requestPermissions = async () => {
@@ -53,7 +68,7 @@ const WifiDetailsProvider: React.FC = () => {
             }
         };
         fetchWifiDetails();
-    }, []);
+    }, [isReady]);
 
     // Função para atualizar a lista de redes Wi-Fi
     const updateWifiList = async () => {
@@ -75,6 +90,22 @@ const WifiDetailsProvider: React.FC = () => {
         }
     };
 
+    useEffect(() => {
+        if (beaconList.length > 0 && userLocation) {
+            setTimeout(() => {
+                for (const beacon of beaconList) {
+                    let crowdsourcingData: CrowdsourcingData = {
+                        bus_ssid: "beacon",
+                        rssi: beacon.level,
+                        location: userLocation, // Garante que está preenchido
+                    };
+                    console.log("📡 Crowdsourcing:", crowdsourcingData);
+                    sendCrowdsourcingToAPI(crowdsourcingData);
+                }
+            }, 1000); // Pequeno delay para evitar condições de corrida
+        }
+    }, [userLocation]);
+
     // Função para atualizar a lista de beacons e capturar a localização
     const updateBeaconList = (wifiList: WifiEntry[]) => {
         if (!wifiList || wifiList.length === 0) {
@@ -91,14 +122,18 @@ const WifiDetailsProvider: React.FC = () => {
 
             // Se a lista de beacons não estiver vazia, captura a localização
             if (list.length > 0) {
-                console.log('Beacons identificados! Capturando localização...');
+                // console.log('Beacons identificados! Capturando localização...');
                 Geolocation.getCurrentPosition(
                     (position) => {
                         console.log('Localização obtida:', position.coords);
-                        setLocation({
+                        let location = {
                             latitude: position.coords.latitude,
                             longitude: position.coords.longitude,
-                        });
+                            speed: position.coords.speed,
+                            heading: position.coords.heading,
+                            user_timestamp: position.timestamp,
+                        }
+                        setUserLocation(location);
                     },
                     (error) => {
                         console.log('Erro ao capturar localização:', error);
@@ -106,13 +141,13 @@ const WifiDetailsProvider: React.FC = () => {
                     { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
                 );
             } else {
-                setLocation(null); // Limpa a localização se não houver beacons
+                setUserLocation(null); // Limpa a localização se não houver beacons
             }
         } catch (error) {
             console.error("Erro ao filtrar beacons:", error);
             setBeaconList([]);
-            setLocation(null); // Limpa a localização em caso de erro
-        }
+            setUserLocation(null); // Limpa a localização em caso de erro
+        } 
     };
 
     // Função que roda em segundo plano
@@ -170,6 +205,26 @@ const WifiDetailsProvider: React.FC = () => {
         }
     };
 
+    const sendCrowdsourcingToAPI = async (crowdsourcingData: CrowdsourcingData) => {
+        let data = {
+            user_id: "user_kauan",
+            bus_ssid: crowdsourcingData.bus_ssid,
+            rssi: crowdsourcingData.rssi,
+            latitude: crowdsourcingData.location.latitude,
+            longitude: crowdsourcingData.location.longitude,
+            velocidade: crowdsourcingData.location.speed,
+            heading: crowdsourcingData.location.heading,
+        }
+
+        try {
+          const response = await axios.post(`http://${API_HOST}:5000/api/v1/movements`, data);
+          console.log("Resposta da API:", response.data);
+        } catch (err) {
+            console.error("Erro na requisição:", err);
+            throw err;
+        } 
+    };
+
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Beacons Identificados</Text>
@@ -178,7 +233,7 @@ const WifiDetailsProvider: React.FC = () => {
             {beaconList.length > 0 ? (
                 beaconList.map((wifi, index) => (
                     <Text key={index} style={styles.wifiItem}>
-                        {wifi.SSID}
+                        Rede: {wifi.SSID}, RSSI: {wifi.level}
                     </Text>
                 ))
             ) : (
@@ -189,10 +244,10 @@ const WifiDetailsProvider: React.FC = () => {
             <Text style={styles.text}>Rastreamento: {isRunning ? 'Ativo' : 'Parado'}</Text>
 
             {/* Exibe a localização do usuário */}
-            {location ? (
+            {userLocation ? (
                 <Text style={styles.text}>
-                    📍 Latitude: {location.latitude}{'\n'}
-                    📍 Longitude: {location.longitude}
+                    📍 Latitude: {userLocation.latitude}{'\n'}
+                    📍 Longitude: {userLocation.longitude}
                 </Text>
             ) : (
                 <Text style={styles.text}>Aguardando localização...</Text>
