@@ -9,4 +9,3 @@
 # Ignorar arquivos específicos de depuração e ninja
 **/*.ninja
 **/*.log
-**/*.json
