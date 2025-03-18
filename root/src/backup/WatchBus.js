@@ -7,6 +7,7 @@ import {
   ShapeSource,
   LineLayer
 } from "@maplibre/maplibre-react-native";
+import { API_HOST } from "../utils/apiKeys";
 
 const apiKey = '036c4bbc-768c-4abf-b0dc-a8823629ecff';
 const styleUrl = `https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=${apiKey}`;
@@ -23,7 +24,7 @@ export default function WatchBus() {
     if (followLocation) {
       // Se não houver conexão ativa, cria uma nova
       if (!socket) {
-        socket = new WebSocket("ws://200.239.93.127:8765");
+        socket = new WebSocket(`ws://${API_HOST}:8765`);
         setWs(socket);
 
         socket.onopen = () => {
@@ -119,6 +120,7 @@ export default function WatchBus() {
     </>
   );
 }
+
 
 const styles = StyleSheet.create({
   map: {

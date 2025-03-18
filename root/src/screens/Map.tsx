@@ -12,8 +12,9 @@ export default function Map() {
     return (
         <>
             <MapView style={MapStyle.map} mapStyle={mapStyleUrl}>
+                
                 <UserLocation  renderMode="native"/>
-                <Camera followUserLocation followZoomLevel={16} />
+                {/* <Camera followUserLocation followZoomLevel={16} /> */}
             </MapView>
         </>
     );

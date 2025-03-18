@@ -3,10 +3,10 @@
 echo "🧹 Limpando arquivos de build e dependências..."
 
 # Remover pastas de build e arquivos temporários
-echo "🗑️ Removendo node_modules, package-lock.json, yarn.lock e arquivos de build..."
+echo "🗑️ \t Removendo node_modules, package-lock.json, yarn.lock e arquivos de build..."
 
 rm -rf node_modules package-lock.json yarn.lock
-rm -rf android/.gradle android/app/build
+rm -rf android/app/build
 
 # Limpar cache do npm
 echo "🧹 Limpando cache do npm..."

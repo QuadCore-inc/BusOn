@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useReducer } from 'react';
 import {
     View, 
     Text,
     StyleSheet,
     Platform, 
-    PermissionsAndroid, 
+    PermissionsAndroid,
     Button } from 'react-native';
 
 import BackgroundJob from 'react-native-background-actions';
@@ -14,10 +14,23 @@ import axios from 'axios';
 
 import { CrowdsourcingData, LocationData } from '../utils/interfaces';
 import { API_HOST } from '../utils/apiKeys';
+import locationState from '../state/locationState';
 
 const busonKey = 'ESP32'; // Chave para filtrar beacons
 
 const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
+
+const initialLocationState = { locationState }
+
+const actions = {
+    updateUserLocation(state: any, action: any) {
+        const newLocation = action.payload
+        return {
+            ...state, 
+            user_location: newLocation
+        }
+    },
+}
 
 const WifiDetailsProvider: React.FC = () => {
     const [isReady, setIsReady] = useState(false);
@@ -30,6 +43,13 @@ const WifiDetailsProvider: React.FC = () => {
     const [wifiList, setWifiList] = useState<WifiEntry[]>([]);
     const [beaconList, setBeaconList] = useState<WifiEntry[]>([]);
     const [userLocation, setUserLocation] = useState<LocationData | null>(null);
+    
+    function locationReducer(state: any, action: any) {
+        const fn = actions[action.type]
+        return fn ? fn(state, action) : state
+    }
+    
+    const [globalLocation, globalLocationDispatch] = useReducer(locationReducer, initialLocationState);
 
     // Solicita permissões necessárias
     const requestPermissions = async () => {
@@ -45,7 +65,7 @@ const WifiDetailsProvider: React.FC = () => {
                 granted['android.permission.ACCESS_BACKGROUND_LOCATION'] === PermissionsAndroid.RESULTS.GRANTED
             );
         }
-        return true;
+        return false;
     };
 
     // Verifica e solicita permissões ao montar o componente
@@ -91,20 +111,20 @@ const WifiDetailsProvider: React.FC = () => {
     };
 
     useEffect(() => {
-        if (beaconList.length > 0 && userLocation) {
+        if (beaconList.length > 0 && globalLocation.user_location) {
             setTimeout(() => {
                 for (const beacon of beaconList) {
                     let crowdsourcingData: CrowdsourcingData = {
                         bus_ssid: beacon.SSID.replace("buson-", ""),
                         rssi: beacon.level,
-                        location: userLocation, // Garante que está preenchido
+                        location: globalLocation.user_location, // Garante que está preenchido
                     };
                     console.log("📡 Crowdsourcing:", crowdsourcingData);
                     sendCrowdsourcingToAPI(crowdsourcingData);
                 }
             }, 1000); // Pequeno delay para evitar condições de corrida
         }
-    }, [userLocation]);
+    }, [globalLocation]);
 
     // Função para atualizar a lista de beacons e capturar a localização
     const updateBeaconList = (wifiList: WifiEntry[]) => {
@@ -133,7 +153,7 @@ const WifiDetailsProvider: React.FC = () => {
                             heading: position.coords.heading,
                             user_timestamp: position.timestamp,
                         }
-                        setUserLocation(location);
+                        globalLocationDispatch({type: "updateUserLocation", payload: location});
                     },
                     (error: any) => {
                         console.log('Erro ao capturar localização:', error);
@@ -244,10 +264,10 @@ const WifiDetailsProvider: React.FC = () => {
             <Text style={styles.text}>Rastreamento: {isRunning ? 'Ativo' : 'Parado'}</Text>
 
             {/* Exibe a localização do usuário */}
-            {userLocation ? (
+            {globalLocation.user_location ? (
                 <Text style={styles.text}>
-                    📍 Latitude: {userLocation.latitude}{'\n'}
-                    📍 Longitude: {userLocation.longitude}
+                    📍 Latitude: {globalLocation.user_location.latitude}{'\n'}
+                    📍 Longitude: {globalLocation.user_location.longitude}
                 </Text>
             ) : (
                 <Text style={styles.text}>Aguardando localização...</Text>

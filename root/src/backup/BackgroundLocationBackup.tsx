@@ -1,7 +1,7 @@
 // BackgroundLocationBackup.tsx
 import React, { useContext, useEffect } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import BackgroundLocationContext from '../contexts/UserLocationContextBackup';
+import BackgroundLocationContext from './UserLocationContextBackup';
 
 export default function BackgroundLocation() {
   const { userLocation, isRunning, startBackgroundTask, stopBackgroundTask } =
