@@ -1,111 +1,151 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Text, StyleSheet, Button, View, TouchableOpacity, Image, TextInput, ScrollView } from "react-native";
+import { Text, StyleSheet, Button, View, TouchableOpacity, Image, TextInput, ScrollView, Alert } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { Bus } from '../utils/interfaces';
-import { Camera, MapView, ShapeSource, CircleLayer, UserLocation } from "@maplibre/maplibre-react-native";
-import { mapStyleUrl, LOCAL_WEBSOCKET, RENDER_WEBSOCKET } from '../utils/apiKeys';
-import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Camera, MapView, ShapeSource, CircleLayer, UserLocation, Images, SymbolLayer, MapViewRef } from "@maplibre/maplibre-react-native";
+import { mapStyleUrl, LOCAL_WEBSOCKET, RENDER_WEBSOCKET, WEBSOCKET_API_AWS } from '../utils/apiKeys';
+import { GestureHandlerRootView, Switch } from "react-native-gesture-handler";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from "@react-navigation/native";
 import CustomDrawer from "./CustomDrawer";
 import BeaconCrowdsourcing from "../contexts/BeaconCrowdsourcing";
+import CustomDrawer2 from "./CustomDrawer2";
+import BottomSheetBus from "../screens/Bottom";
+
+import { CustomDrawerBottomSheet } from "../screens/Bottom";
+import Geolocation from "@react-native-community/geolocation";
+import { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 export default function WatchBus() {
-  const [ws, setWs] = useState<WebSocket | null>(null);
+  const mapRef = useRef(null);
+  const cameraRef = useRef(null); // Ref para a câmera
+
   const busesLines = useSelector((state: any) => state.busesLines); // Acessa o estado buses
+  const userLocation = useSelector((state: any) => state.user_location);
   const dispatch = useDispatch();
+  
+  const [ws, setWs] = useState<WebSocket | null>(null);
+  const [followBuses, setfollowBuses] = useState(false); // Controle do estado de seguir localização
+  const [cameraLocation, setCameraLocation] = useState<number[] | null>(null);
 
   const [selectedBus, setSelectedBus] = useState<Bus | null>(null); // Estado para o ônibus selecionado
-  const [followLocation, setFollowLocation] = useState(false); // Controle do estado de seguir localização
-  const mapRef = useRef(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [renderWebsocket, setRenderWebsocket] = useState(false);
-  const [localHost, setLocalHost] = useState<string>("192.168.100.102")
+  const [isBottomSheetOpen, setIsBottomSheetOpen] = React.useState(true);
 
+  const websocketAPIHost = useSelector((state: any) => state.websocketAPIHost); // Acessa o estado buses
+  const [followUserLocation, setFollowUserLocation] = useState(false);
+  const [cameraKey, setCameraKey] = useState(0);
+
+  const handleGoToUserLocation = () => {
+    console.log("Going to user location: ", userLocation);
+    if (cameraRef.current && userLocation) {
+      setFollowUserLocation(true);
+      cameraRef.current?.setCamera({
+        centerCoordinate: [userLocation.longitude, userLocation.latitude],
+        zoomLevel: 14,
+        animationDuration: 2000,
+      });
+      setTimeout(() => {
+        setFollowUserLocation(false);
+      }, 2000);
+      setTimeout(() => {
+        setCameraKey((prev) => prev + 1);
+      }, 5000);
+    }
+  };
+
+  useEffect(() => {
+    if (selectedBus && selectedBus.location) {  
+      // Chama o setCamera para animar para a posição do ônibus
+      cameraRef.current?.setCamera({
+        centerCoordinate: [selectedBus.location.longitude, selectedBus.location.latitude - 0.002],
+        zoomLevel: 16,
+        animationDuration: 2000,
+      });
+  
+      // Após 2 segundos (quando a animação termina), libera o tracking
+      setTimeout(() => {
+        setFollowUserLocation(false);
+      }, 2000);
+  
+      // Após 5 segundos, forçamos um re-render da câmera (se necessário)
+      setTimeout(() => {
+        setCameraKey((prev) => prev + 1);
+      }, 4000);
+    }
+  }, [selectedBus]);
+  
+
+  useEffect(() => {
+    Geolocation.getCurrentPosition(
+      (position: any) => {
+          console.log("Tela de localização carregada! User's location: ", position.coords);
+          let location = {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+              speed: position.coords.speed,
+              heading: position.coords.heading,
+              user_timestamp: position.timestamp,
+          }
+          dispatch({type: "updateUserLocation", payload: location});
+      },
+      (error: any) => {
+          console.log('Erro ao capturar localização:', error);
+      },
+      { enableHighAccuracy: false, timeout: 15000, maximumAge: 10000 }
+  );
+  }, []); 
+
+  useEffect(() => {
+    console.log("User's location updated in App global state: ", userLocation)
+  }, [userLocation])
+
+  // Efeito para controlar o WebSocket
   useEffect(() => {
     let socket = ws;
 
-    if (followLocation) {
-      // Se não houver conexão ativa, cria uma nova
+    if (followBuses) {
       if (!socket) {
-        if (renderWebsocket){
-          console.log("🚨 Using Render Webscocket route!")
-          socket = new WebSocket(`${RENDER_WEBSOCKET}`);
-        } else {
-          socket = new WebSocket(`ws://${localHost}:8765`)
-        }
+        socket = new WebSocket(`ws://${websocketAPIHost}:8765`);
         setWs(socket);
 
         socket.onopen = () => {
           console.log("WebSocket conectado.");
-
-          // Filtra as linhas ativas
           const activeLines = busesLines.filter((line: any) => line.isLineActive);
-
-          // Para cada linha ativa, filtra os ônibus ativos e coleta os _id dos ônibus ativos e suas linhas
           const activeBusesIds = activeLines
             .map((line: any) => {
-              // Para cada linha ativa, pega os ônibus ativos e combina _id da linha e do ônibus
               const activeBusesInLine = line.lineBuses
                 .filter((bus: any) => bus.isBusActive)
-                .map((bus: any) => `${line._id}/${bus._id}`); // Retorna o formato "lineId/busId"
-              return activeBusesInLine; // Retorna o array de combinações de _id
+                .map((bus: any) => `${line._id}/${bus._id}`);
+              return activeBusesInLine;
             })
-            .flat(); // Flatten para que o resultado final seja um array de "lineId/busId"
-
-          // Envia a lista de "lineId/busId" dos ônibus ativos
+            .flat();
           socket?.send(JSON.stringify(activeBusesIds));
-
           console.log("Enviado para o WebSocket:", activeBusesIds);
         };
 
         socket.onmessage = (event) => {
           try {
             const data = JSON.parse(event.data);
-            console.log("Dados recebidos do WebSocket:", data);  // Log para ver o que foi recebido
-        
-            // Iterar sobre a array de atualizações de ônibus recebidas do WebSocket
+            console.log("Dados recebidos do WebSocket:", data);
             data.forEach((busUpdate: { _id: string, location: any }) => {
-              // console.log("Processando atualização de ônibus:", busUpdate);
-        
-              const [lineId, busId] = busUpdate._id.split('/'); // Extrai lineId e busId do _id
-              // console.log("lineId:", lineId, "busId:", busId); // Log para verificar os IDs extraídos
-        
-              // Encontra a linha correspondente no estado busesLines
+              const [lineId, busId] = busUpdate._id.split('/');
               const line = busesLines.find((line: any) => line._id === lineId);
-              if (!line) {
-                console.error("Linha não encontrada:", lineId); // Log de erro se a linha não for encontrada
-              }
-        
               if (line) {
-                console.log("Linha encontrada:", line);  // Log para verificar a linha encontrada
-        
-                // Se a linha for encontrada, então vamos procurar o ônibus correspondente dentro de lineBuses
                 const bus = line.lineBuses.find((bus: any) => bus._id === busId);
-                if (!bus) {
-                  console.error("Ônibus não encontrado:", busId); // Log de erro se o ônibus não for encontrado
-                }
-        
                 if (bus) {
-                  // console.log("Ônibus encontrado:", bus);  // Log para verificar o ônibus encontrado
-        
-                  // Caso o ônibus seja encontrado, vamos atualizar sua localização
                   const updatedLocation = {
                     latitude: busUpdate.location.latitude,
                     longitude: busUpdate.location.longitude,
                     speed: busUpdate.location.speed,
                     heading: busUpdate.location.heading,
-                    user_timestamp: new Date(busUpdate.location.time).getTime(), // Converte o tempo para timestamp
+                    user_timestamp: new Date(busUpdate.location.time).getTime(),
                   };
-        
-                  console.log(`Atualizando localização do ônibus ${busId} em ${lineId}`, updatedLocation);  // Log para verificar os dados de localização
-        
-                  // Atualiza a localização do ônibus no estado global usando o dispatch
                   dispatch({
                     type: 'updateBusLocation',
                     payload: {
                       busId: bus._id,
-                      lineKey: line._id, // Agora passando o lineKey
+                      lineKey: line._id,
                       location: updatedLocation,
                     },
                   });
@@ -116,7 +156,7 @@ export default function WatchBus() {
             console.error("Erro ao processar a mensagem WebSocket:", error);
           }
         };
-        
+
         socket.onerror = (error) => {
           console.error("WebSocket Error:", error);
         };
@@ -138,38 +178,26 @@ export default function WatchBus() {
         socket.close();
       }
     };
-  }, [followLocation]);
-  
-
-  const handleSelectBus = (bus: Bus) => {
-    // Se o ônibus já estiver sendo seguido, desfaz a seleção
-    if (selectedBus && selectedBus._id === bus._id) {
-      setSelectedBus(null); // Para de seguir o ônibus
-    } else {
-      setSelectedBus(bus); // Seleciona o novo ônibus
-    }
-  };
-
-  const toggleDrawer = () => {
-    setIsDrawerOpen((prev) => !prev);
-  };
-
-  const handleToggleBus = (bus: Bus) => {
-    dispatch({ type: 'toggleBus', payload: bus._id });
-  };
+  }, [followBuses]); // Dependência apenas de followBuses
 
   return (
     <>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        {/* Drawer */}
+        <TouchableOpacity style={styles.floatingButton} onPress={handleGoToUserLocation}>
+          <Image source={require("../../assets/bus-icon.png")} style={{ width: 30, height: 30 }} />
+        </TouchableOpacity>
         <MapView
           ref={mapRef}
           style={styles.map}
           mapStyle={mapStyleUrl}
         >
-          <UserLocation visible={true} renderMode="native" />
-
-          {/* Filtra e mapeia ônibus ativos de linhas ativas */}
+          <UserLocation renderMode="native" />
+          <Camera
+            ref={cameraRef}
+            key={cameraKey}
+            followUserLocation={followUserLocation}
+          />
+          <Images images={{ busIcon: require("../../assets/bus-icon-2.png") }} />
           <ShapeSource
             id="buses"
             shape={{
@@ -187,155 +215,112 @@ export default function WatchBus() {
                   properties: {
                     id: bus._id,
                     name: bus.name,
+                    icon: 'busIcon'
                   },
                 })),
             }}
           >
-            <CircleLayer
-              id="busCircles"
+            <SymbolLayer
+              id="busIcons"
               style={{
-                circleRadius: 6,
-                circleColor: "#FF0000",
-                circleOpacity: 0.8,
+                iconImage: ["get", "icon"], // Usa o ícone associado ao Feature
+                iconSize: [
+                  "interpolate",
+                  ["exponential", 1.5], // Crescimento exponencial mais suave
+                  ["zoom"],
+                  4, 0.1,  
+                  6, 0.2,  
+                  8, 0.3,  
+                  10, 0.4,  
+                  14, 0.6,  
+                  16, 0.7,
+                  18, 1.2,  
+                  20, 1.5,  
+                  25, 3
+                ],
+                iconAllowOverlap: true, // Permite sobreposição
+                iconIgnorePlacement: true, // Evita que sumam por colisão
               }}
             />
           </ShapeSource>
-
-          {/* Centraliza no ônibus selecionado */}
-          {selectedBus && (
-            <Camera
-              centerCoordinate={[
-                selectedBus.location.longitude,
-                selectedBus.location.latitude,
-              ]}
-              zoomLevel={16}
-            />
-          )}
         </MapView>
-        <CustomDrawer
-          isOpen={isDrawerOpen}
-          onClose={() => setIsDrawerOpen(false)}
-          drawerWidth={300}
-        >
-          <View style={{alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-            <Text style={[styles.title]}> Linhas de Ônibus Ativas </Text>
-            <View style={{flexDirection: 'row'}}>
-              <TouchableOpacity
-                onPress={() => setIsDrawerOpen((prev) => !prev)}
-                style={[styles.pinButton, { alignSelf: 'center', marginHorizontal: 10 }]}
-                >
-                <Text style={styles.pintButtonText}> {isDrawerOpen ? "Fechar Drawer" : "Abrir Drawer"} </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => setFollowLocation((prev) => !prev)}
-                style={styles.pinButton}
-                >
-                <Text style={styles.pintButtonText}>{followLocation ? "Parar de seguir" : "Seguir Localização"} </Text>
-              </TouchableOpacity>
-            </View>
+        
+        <CustomDrawerBottomSheet
+            isOpen={isBottomSheetOpen}
+            onClose={() => setIsBottomSheetOpen(false)}
+            >
+            <View style={
+              {
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+              }}> 
+              <Text style={styles.drawerTitle}>Seus ônibus ativos</Text>
+              <View style={{
+                flexDirection: 'row',
+
+              }}> 
+                <Text style={styles.drawerTitle}> Seguir </Text>
+                <Switch 
+                  value={followBuses}
+                  onValueChange={() => setfollowBuses((prev) => !prev)}
+                  />
+              </View>
           </View>
-  
-          {/* Renderizando as linhas de ônibus ativas */}
-          <View style={{ flex: 1 }}>
-            {busesLines
-              .filter((line: any) => line.isLineActive) // Filtra apenas as linhas ativas
-              .map((busLine: any) => {
-                // console.log("BusLine:", busLine); // Log para verificar o objeto da linha
-  
-                // Acessando diretamente a chave lineBuses, pois não há chave dinâmica como 'line_'
-                const busesInLine = busLine.lineBuses;
-                if (!busesInLine) {
-                  console.log("Linha sem ônibus", busLine);
-                  return null; // Se não houver ônibus na linha, não renderiza nada
-                }
-  
-                // console.log("Ônibus da linha:", busesInLine);
-  
-                return (
-                  <View key={busLine._id} style={styles.lineContainer}>
-                    <Text style={styles.lineTitle}>Linha: {busLine.lineName}</Text>
-  
-                    {/* Renderiza os ônibus da linha */}
-                    {busesInLine
-                      .filter((bus: any) => bus.isBusActive) // Filtra apenas os ônibus ativos
-                      .map((bus: Bus) => {
-                        // console.log("Bus Ativo:", bus); // Log para verificar cada ônibus ativo
-                        return (
-                          <TouchableOpacity
+          <BottomSheetScrollView 
+            contentContainerStyle={styles.contentContainer}
+            keyboardShouldPersistTaps="handled"
+          >  
+            <View style={{ flex: 1 }}>
+              {busesLines
+                .filter((line: any) => line.isLineActive) // Filtra apenas as linhas ativas
+                .map((busLine: any) => {
+                  // console.log("BusLine:", busLine); // Log para verificar o objeto da linha
+                  
+                  // Acessando diretamente a chave lineBuses, pois não há chave dinâmica como 'line_'
+                  const busesInLine = busLine.lineBuses;
+                  if (!busesInLine) {
+                    console.log("Linha sem ônibus", busLine);
+                    return null; // Se não houver ônibus na linha, não renderiza nada
+                  }
+                  
+                  // console.log("Ônibus da linha:", busesInLine);
+                  
+                  return (
+                    <View key={busLine._id} style={styles.lineContainer}>
+                      <Text style={styles.lineTitle}>Linha: {busLine.lineName}</Text>
+    
+                      {busesInLine
+                        .filter((bus: any) => bus.isBusActive) // Filtra apenas os ônibus ativos
+                        .map((bus: Bus) => {
+                          // console.log("Bus Ativo:", bus); // Log para verificar cada ônibus ativo
+                          return (
+                            <TouchableOpacity
                             key={bus._id}
                             style={styles.busItem}
                             onPress={() => setSelectedBus(bus._id === selectedBus?._id ? null : bus)} // Alterna a seleção do ônibus
-                          >
-                            <Text style={styles.busName}>{bus.name}</Text>
-  
-                            {/* Exibe informações detalhadas do ônibus quando selecionado */}
-                            {selectedBus?._id === bus._id && (
-                              <View style={styles.busLocationInfoBox}>
-                                <Text style={styles.locationInfoText}>Lat: {bus.location.latitude.toFixed(6)}</Text>
-                                <Text style={styles.locationInfoText}>Long: {bus.location.longitude.toFixed(6)}</Text>
-                                <Text style={styles.locationInfoText}>Vel: {bus.location.speed} km/h</Text>
-                                <Text style={styles.locationInfoText}>Direção: {bus.location.heading}°</Text>
-                              </View>
-                            )}
-                          </TouchableOpacity>
-                        );
-                      })}
-                  </View>
-                );
-              })}
-          </View>
-        </CustomDrawer>
-  
-        {/* InfoBox */}
-        <ScrollView style={styles.infoBox}
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={true}>
-          <View style={{borderBottomColor: '#ccc', borderBottomWidth: 1}}>
-            <Text style={styles.title}>Configurações</Text>
-          </View>
-          <View>
-            <BeaconCrowdsourcing />
-          </View>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                            >
+                              <Text style={styles.busName}>{bus.name}</Text>
     
-            <TouchableOpacity
-              onPress={() => setFollowLocation((prev) => !prev)}
-              style={styles.pinButton}
-              >
-              <Text style={styles.pintButtonText}>{followLocation ? "Parar de seguir" : "Seguir Localização"} </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => setIsDrawerOpen((prev) => !prev)}
-              style={styles.pinButton}
-              >
-              <Text style={styles.pintButtonText}>{isDrawerOpen ? "Fechar Drawer" : "Abrir Drawer"} </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => setRenderWebsocket((prev) => !prev)}
-              style={styles.pinButton}
-              >
-              <Text style={styles.pintButtonText}>{renderWebsocket ? "Parar Render" : "Seguir com Render"} </Text>
-            </TouchableOpacity>
-          </View>
-          <View style={[styles.pinButton, {flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}]}> 
-            <Text style={styles.label}> IP do Host local: </Text>
-            <TextInput
-                value={`${localHost}`}
-                onChangeText={(text: string) => setLocalHost(text)}
-                placeholder="Defina o IP do Host local"
-                style={styles.input}
-                > 
-              </TextInput>
-          </View>
-        </ScrollView>
-        
+                              {selectedBus?._id === bus._id && (
+                                <View style={styles.busLocationInfoBox}>
+                                  <Text style={styles.locationInfoText}>Lat: {bus.location.latitude.toFixed(6)}</Text>
+                                  <Text style={styles.locationInfoText}>Long: {bus.location.longitude.toFixed(6)}</Text>
+                                  <Text style={styles.locationInfoText}>Vel: {bus.location.speed} km/h</Text>
+                                  <Text style={styles.locationInfoText}>Direção: {bus.location.heading}°</Text>
+                                </View>
+                              )}
+                            </TouchableOpacity>
+                          );
+                        })}
+                    </View>
+                  );
+                })}
+            </View>
+          </BottomSheetScrollView>
+        </CustomDrawerBottomSheet>
       </GestureHandlerRootView>
     </>
   );
-  
-    
 }
 
 const colorAcai = 'rgba(87,41,100,1.0)'
@@ -444,7 +429,6 @@ const styles = StyleSheet.create({
   },
   map: {
     flex: 1,
-    zIndex: 1, // Mapa fica abaixo do drawer
   },
   infoBox: {
     position: "absolute",
@@ -459,7 +443,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     shadowRadius: 5,
     elevation: 5,
-    zIndex: 9, // Garante que o drawer fique acima de outros componentes
+    zIndex: 2, // Garante que o drawer fique acima de outros componentes
   },
   lineContainer: {
     marginBottom: 16,
@@ -504,5 +488,40 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     padding: 10, // Espaçamento interno
+  },
+  bottomSheetWrapper: {
+    zIndex: 10, // Garante que fique sobre o mapa
+  },
+  drawerTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: colorAcai,
+    marginBottom: 15,
+    marginTop: 2,
+    textAlign: 'center',
+  },
+  item: {
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderColor: '#CCC',
+    marginBottom: 10,
+  },
+  floatingButton: {
+    position: 'absolute',
+    top: 20, // Distância do topo
+    left: 20, // Distância da esquerda
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
+    padding: 15,
+    borderRadius: 50,
+    elevation: 5, // Para um efeito de sombra
+    zIndex: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 24,
+  },
+  contentContainer: {
+    padding: 20,
   },
 });

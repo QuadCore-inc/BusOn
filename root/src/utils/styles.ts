@@ -1,6 +1,14 @@
 import React from "react";
 import { StyleSheet } from "react-native"; 
 
+const colorAcai = 'rgba(87,41,100,1.0)';
+const colorWhite = 'rgba(255,255,255,1.0)';
+
+export const colors = {
+  colorAcai: 'rgba(87,41,100,1.0)',
+  colorWhite: 'rgba(255,255,255,1.0)'
+}
+
 export const MapStyle = StyleSheet.create({
     map: {
       flex: 1,
@@ -43,6 +51,8 @@ export const BusListStyle = StyleSheet.create({
   },
   busText: {
     fontSize: 16,
+    fontFamily: 'Ubuntu-Bold',
+    color: colorAcai
   },
   button: {
     backgroundColor: '#007BFF',

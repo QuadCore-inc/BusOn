@@ -2,9 +2,12 @@ import { createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Bus, BusLine } from '../utils/interfaces'
+import { REST_API_AWS, WEBSOCKET_API_AWS } from '../utils/apiKeys';
 // Estado inicial
 const initialState = {
     user_location: null,
+    restAPIHost: REST_API_AWS,
+    websocketAPIHost: WEBSOCKET_API_AWS,
     busesLines: [ 
         {
             _id: 'line_circular_ufpa',
@@ -157,6 +160,20 @@ const actions = {
             ),
         };
     },
+    setRestAPIhost(state: any, action: any) {
+        const host = action.payload
+        return {
+            ...state,
+            restAPIHost: host,
+        }
+    },
+    setWebsocketAPIhost(state: any, action: any) {
+        const host = action.payload
+        return {
+            ...state,
+            websocketAPIHost: host,
+        }
+    }
 };
 
 

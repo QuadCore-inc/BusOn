@@ -6,7 +6,8 @@ import {
     Platform, 
     PermissionsAndroid,
     Button, 
-    TouchableOpacity} from 'react-native';
+    TouchableOpacity,
+    Switch} from 'react-native';
 
 import BackgroundJob from 'react-native-background-actions';
 import WifiReborn, { WifiEntry } from 'react-native-wifi-reborn';
@@ -15,7 +16,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'; // Importando hooks do Redux
 
 import { CrowdsourcingData, LocationData } from '../utils/interfaces';
-import { API_HOST } from '../utils/apiKeys';
+import { REST_API_AWS } from '../utils/apiKeys';
 import { beaconKey } from '../utils/constants';
 
 const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
@@ -32,6 +33,8 @@ const BeaconCrowdsourcing: React.FC = () => {
     // Usando o useSelector para acessar o estado do Redux
     const userLocation = useSelector((state: any) => state.user_location);
     const dispatch = useDispatch(); // Usando o useDispatch para disparar ações
+    const restAPIHost = useSelector((state: any) => state.restAPIHost);
+
 
     useEffect(() => {
         if (beaconList.length > 0 && userLocation) {
@@ -268,17 +271,16 @@ const BeaconCrowdsourcing: React.FC = () => {
         }
 
         try {
-          const response = await axios.post(`${API_HOST}/api/v1/movements`, data, { timeout: 10000 });
+          const response = await axios.post(`${restAPIHost}/api/v1/movements`, data, { timeout: 10000 });
           console.log("Resposta da API:", response.data);
         } catch (err) {
             console.error("Erro na requisição:", err);
-            // throw err;
         } 
     };
 
     const checkApiAvailability = async () => {
         try {
-            const response = await axios.get(`${API_HOST}/api/v1/health`); // Endpoint de saúde ou um endpoint simples
+            const response = await axios.get(`${restAPIHost}/api/v1/health`); // Endpoint de saúde ou um endpoint simples
             return response.status === 200; // Retorna true se a API estiver disponível
         } catch (error) {
             console.error("API não disponível");
@@ -311,6 +313,16 @@ const BeaconCrowdsourcing: React.FC = () => {
                         {isRunning ? 'Turn Off' : 'Turn On'}
                     </Text>
                 </TouchableOpacity>
+                <Switch 
+                    value={isRunning}
+                    onValueChange={(newValue) => {
+                        if (newValue) {
+                            startBackgroundTask(); // Se ativado, inicia a tarefa
+                        } else {
+                            stopBackgroundTask();  // Se desativado, para a tarefa
+                        }
+                    }}
+                />
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'center'}}>
                 <View style={{flex: 1, alignItems: 'center', padding: 10}}>

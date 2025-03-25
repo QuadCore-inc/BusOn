@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="edd14642-f6e3-4632-9bd7-4a01b7a3996c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/root/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/root/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/.cmake/api/v1/reply/cache-v2-faae3553564699cde93c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/.cmake/api/v1/reply/index-2025-02-23T17-10-01-0202.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/additional_project_files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/additional_project_files.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/build_file_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/build_file_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/compile_commands.json.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/compile_commands.json.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/metadata_generation_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/metadata_generation_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/prefab_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/arm64-v8a/prefab_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/.cmake/api/v1/reply/cache-v2-add30e2f318b691b4153.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/.cmake/api/v1/reply/index-2025-02-23T17-10-09-0188.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/additional_project_files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/additional_project_files.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/build_file_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/build_file_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/compile_commands.json.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/compile_commands.json.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/metadata_generation_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/metadata_generation_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/prefab_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/armeabi-v7a/prefab_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/hash_key.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/hash_key.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni/fbjniConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni/fbjniConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni/fbjniConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/fbjni/fbjniConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/hermes-engine/hermes-engineConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/hermes-engine/hermes-engineConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/hermes-engine/hermes-engineConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/arm64-v8a/prefab/lib/aarch64-linux-android/cmake/hermes-engine/hermes-engineConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/fbjni/fbjniConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/hermes-engine/hermes-engineConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/hermes-engine/hermes-engineConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/hermes-engine/hermes-engineConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/armeabi-v7a/prefab/lib/arm-linux-androideabi/cmake/hermes-engine/hermes-engineConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni/fbjniConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni/fbjniConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni/fbjniConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/fbjni/fbjniConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/hermes-engine/hermes-engineConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/hermes-engine/hermes-engineConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/hermes-engine/hermes-engineConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86/prefab/lib/i686-linux-android/cmake/hermes-engine/hermes-engineConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid/ReactAndroidConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/ReactAndroid/ReactAndroidConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni/fbjniConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni/fbjniConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni/fbjniConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/fbjni/fbjniConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/hermes-engine/hermes-engineConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/hermes-engine/hermes-engineConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/hermes-engine/hermes-engineConfigVersion.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/prefab/x86_64/prefab/lib/x86_64-linux-android/cmake/hermes-engine/hermes-engineConfigVersion.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/.cmake/api/v1/reply/cache-v2-99a3621c370fe8303233.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/.cmake/api/v1/reply/index-2025-02-23T17-10-16-0610.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/additional_project_files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/additional_project_files.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/build_file_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/build_file_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/compile_commands.json.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/compile_commands.json.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/metadata_generation_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/metadata_generation_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/prefab_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86/prefab_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/.cmake/api/v1/reply/cache-v2-846cdd8e3ec27c1b65de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/.cmake/api/v1/reply/index-2025-02-23T17-10-24-0175.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/additional_project_files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/additional_project_files.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/android_gradle_build_mini.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/android_gradle_build_mini.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/build_file_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/build_file_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/compile_commands.json.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/compile_commands.json.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/configure_fingerprint.bin" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/configure_fingerprint.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/metadata_generation_command.txt" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/metadata_generation_command.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/prefab_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/Debug/184a593k/x86_64/prefab_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/arm64-v8a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/arm64-v8a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/armeabi-v7a/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/armeabi-v7a/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/x86/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/x86/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/x86_64/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/.cxx/tools/debug/x86_64/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/build/generated/autolinking/autolinking.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/build/generated/autolinking/autolinking.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/build/generated/autolinking/package-lock.json.sha" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/build/generated/autolinking/package-lock.json.sha" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/android/build/generated/autolinking/package.json.sha" beforeDir="false" afterPath="$PROJECT_DIR$/root/android/build/generated/autolinking/package.json.sha" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/root/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/root/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/root/src/hooks/useUserLocation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/root/src/hooks/useUserLocation.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2trBXImhSNzxpkRwPilhXdWtTzN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "feature/beacon-app-api",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/kkaua/Documents/Projetos-III/github/QuadCore/root/android"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="edd14642-f6e3-4632-9bd7-4a01b7a3996c" name="Changes" comment="" />
+      <created>1741100353399</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741100353399</updated>
+    </task>
+    <servers />
+  </component>
+</project>
